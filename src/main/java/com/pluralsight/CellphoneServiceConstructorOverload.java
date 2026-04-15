@@ -8,13 +8,14 @@ public class CellphoneServiceConstructorOverload {
         CellPhone cellPhone1 = new CellPhone();
         CellPhone cellPhone2 = new CellPhone();
 
+
         // Create a scanner object to read user input
         Scanner scanner = new Scanner(System.in);
 
         //cellphone 1
         System.out.print("What is the serial number? ");
-        int serialNumber = scanner.nextInt();  // Read integer value
-        cellPhone1.setSerialNumber(serialNumber);
+        int serialNumber1 = scanner.nextInt();  // Read integer value
+        cellPhone1.setSerialNumber(serialNumber1);
         scanner.nextLine();  // Consume newline
 
         System.out.print("What model is the phone? ");
@@ -38,7 +39,7 @@ public class CellphoneServiceConstructorOverload {
         //cellphone 2
         System.out.print("What is the serial number? ");
         int serialNumber2 = scanner.nextInt();  // Read integer value
-        cellPhone2.setSerialNumber(serialNumber);
+        cellPhone2.setSerialNumber(serialNumber2);
         scanner.nextLine();  // Consume newline
 
         System.out.print("What model is the phone? ");
@@ -57,6 +58,11 @@ public class CellphoneServiceConstructorOverload {
         String owner2 = scanner.nextLine();
         cellPhone2.setOwner(owner2);
 
+
+
+
+        CellPhone cellPhone3 = new CellPhone(12345, "X", "verizon", "6666", "Rick");
+
         // Close the scanner
         scanner.close();
 
@@ -71,10 +77,12 @@ public class CellphoneServiceConstructorOverload {
         // display info for phone 1 and 2
         display(cellPhone1);
         display(cellPhone2);
+        display(cellPhone3);
         System.out.println("\n");
         //display phones calling each other
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
+        cellPhone1.dial(cellPhone3.getPhoneNumber());
 
     }
 
