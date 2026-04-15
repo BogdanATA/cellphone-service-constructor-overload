@@ -1,0 +1,92 @@
+package com.pluralsight;
+
+import java.util.Scanner;
+
+public class CellphoneServiceConstructorOverload {
+    public static void main(String[] args) {
+        // Create a new instance of CellPhone
+        CellPhone cellPhone1 = new CellPhone();
+        CellPhone cellPhone2 = new CellPhone();
+
+        // Create a scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        //cellphone 1
+        System.out.print("What is the serial number? ");
+        int serialNumber = scanner.nextInt();  // Read integer value
+        cellPhone1.setSerialNumber(serialNumber);
+        scanner.nextLine();  // Consume newline
+
+        System.out.print("What model is the phone? ");
+        String model1 = scanner.nextLine();  // Read entire line till newline
+        cellPhone1.setModel(model1);
+
+        System.out.print("Who is the carrier? ");
+        String carrier1 = scanner.nextLine();
+        cellPhone1.setCarrier(carrier1);
+
+        System.out.print("What is the phone number? ");
+        String phoneNumber1 = scanner.nextLine();
+        cellPhone1.setPhoneNumber(phoneNumber1);
+
+        System.out.print("Who is the owner of the phone? ");
+        String owner1 = scanner.nextLine();
+        cellPhone1.setOwner(owner1);
+
+        System.out.println("\n");
+
+        //cellphone 2
+        System.out.print("What is the serial number? ");
+        int serialNumber2 = scanner.nextInt();  // Read integer value
+        cellPhone2.setSerialNumber(serialNumber);
+        scanner.nextLine();  // Consume newline
+
+        System.out.print("What model is the phone? ");
+        String model2 = scanner.nextLine();  // Read entire line till newline
+        cellPhone2.setModel(model2);
+
+        System.out.print("Who is the carrier? ");
+        String carrier2 = scanner.nextLine();
+        cellPhone2.setCarrier(carrier2);
+
+        System.out.print("What is the phone number? ");
+        String phoneNumber2 = scanner.nextLine();
+        cellPhone2.setPhoneNumber(phoneNumber2);
+
+        System.out.print("Who is the owner of the phone? ");
+        String owner2 = scanner.nextLine();
+        cellPhone2.setOwner(owner2);
+
+        // Close the scanner
+        scanner.close();
+
+        // Display the properties of the phone using getters
+        /*System.out.println("\nCellPhone Details:");
+        System.out.println("Serial Number: " + cellPhone1.getSerialNumber());
+        System.out.println("Model: " + cellPhone1.getModel());
+        System.out.println("Carrier: " + cellPhone1.getCarrier());
+        System.out.println("Phone Number: " + cellPhone1.getPhoneNumber());
+        System.out.println("Owner: " + cellPhone1.getOwner());*/
+
+        // display info for phone 1 and 2
+        display(cellPhone1);
+        display(cellPhone2);
+        System.out.println("\n");
+        //display phones calling each other
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
+
+    }
+
+
+
+    public static void display(CellPhone phone){
+        System.out.println("\nCellPhone Details:");
+        System.out.println("Serial Number: " + phone.getSerialNumber());
+        System.out.println("Model: " + phone.getModel());
+        System.out.println("Carrier: " + phone.getCarrier());
+        System.out.println("Phone Number: " + phone.getPhoneNumber());
+        System.out.println("Owner: " + phone.getOwner());
+    }
+
+}
