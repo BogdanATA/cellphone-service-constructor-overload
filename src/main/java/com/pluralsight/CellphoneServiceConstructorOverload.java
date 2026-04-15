@@ -82,7 +82,7 @@ public class CellphoneServiceConstructorOverload {
         //display phones calling each other
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
-        cellPhone1.dial(cellPhone3.getPhoneNumber());
+        cellPhone1.dial(cellPhone3);
 
     }
 
